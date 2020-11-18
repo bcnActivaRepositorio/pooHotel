@@ -155,6 +155,8 @@ function myName() {
         counter++;
     }
     // work later in checks!
+    //prettier
+    nameHotel = nameHotel.toLowerCase().substring(0, 1).toUpperCase() + nameHotel.substring(1);
         // go and fly by yourself
         return nameHotel;
 }
