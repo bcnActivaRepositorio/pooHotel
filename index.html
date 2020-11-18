@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body class="bg-dark text-light">
+<div class="container">
+    <form class="mt-5">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="hotelName" placeholder="Hotel name">
+          </div>
+          <div class="col">
+            <input type="number" value="20" class="form-control" id="hotelRooms" placeholder="Number of rooms">
+          </div>
+          <div class="col">
+            <input type="number" value="20" class="form-control" id="hotelFloors" placeholder="Floors">
+          </div>
+          <div class="col">
+            <input type="number" value="20" class="form-control" id="hotelSurf" placeholder="Total surface">
+          </div>
+        </div>
+        <div class="form-row justify-content-center mt-5" id="botonsForm">
+            <div class="col-3">
+            <button type="button" id="boton1" class="botons btn btn-dark text-light text-capitalize btn-lg">create hotel</button>  
+            </div>
+            <div class="col-3">
+            <button type="button" id="boton2" class="botons btn btn-dark text-light text-capitalize btn-lg">check hotel</button>  
+            </div>
+            <div class="col-3">
+            <button type="button" id="boton3" class="botons btn btn-dark text-light text-capitalize btn-lg">modified hotel</button>  
+            </div>
+            <div class="col-3">
+            <button type="button" id="boton4" class="botons btn btn-dark text-light text-capitalize btn-lg">delete hotel</button>  
+            </div>
+            <div class="col-3">
+            <button type="button" id="boton5" class="botons btn btn-dark text-light text-capitalize btn-lg mt-3">clean fields</button>  
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-auto">
+                <p id="answerMe"  class="answer h4 text-warning"></p>
+                <p id="answerMe1" class="answer h4 text-warning"></p>
+                <p id="answerMe2" class="answer h4 text-warning"></p>
+                <p id="answerMe3" class="answer h4 text-warning"></p>
+            </div>
+        </div>
+      </form>
+    </div>  
+    <!--scripts-->
+    <script src="js/hotel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
