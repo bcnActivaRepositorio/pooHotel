@@ -55,5 +55,11 @@ var Hotel = /** @class */ (function () {
         text = "The " + this.nameHotel + " Hotel has been added to the database: \n Number of rooms: " + this.numRooms + " \n Floors: " + this.numFloors + " \n Square meters: " + this.totalSurf + " m2  ";
         return text;
     };
+    //updated me
+    Hotel.prototype.toUpdate = function () {
+        var text;
+        text = "The " + this.nameHotel + " Hotel has been updated in the database: \n Number of rooms: " + this.numRooms + " \n Floors: " + this.numFloors + " \n Square meters: " + this.totalSurf + " m2  ";
+        return text;
+    };
     return Hotel;
 }());

@@ -46,4 +46,10 @@ class Hotel {
         text = `The ${this.nameHotel} Hotel has been added to the database: \n Number of rooms: ${this.numRooms} \n Floors: ${this.numFloors} \n Square meters: ${this.totalSurf} m2  `;
         return text;
     }
+    //updated me
+    toUpdate(){
+        let text: string;
+        text = `The ${this.nameHotel} Hotel has been updated in the database: \n Number of rooms: ${this.numRooms} \n Floors: ${this.numFloors} \n Square meters: ${this.totalSurf} m2  `;
+        return text; 
+    }
 }

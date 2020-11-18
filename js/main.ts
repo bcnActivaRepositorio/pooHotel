@@ -1,13 +1,16 @@
 //one ring to rule them all
+"use strict"
 document.getElementById('boton1').addEventListener('click', buildHotel);
 document.getElementById('boton2').addEventListener('click', lookUp);
+document.getElementById('boton3').addEventListener('click', modifyMe);
 document.getElementById('boton4').addEventListener('click', nuriaKasparov);
 document.getElementById('boton5').addEventListener('click', clearMe);
-"use strict"
-console.log('main works');
 
 // write me
 var writeMe = ( document.querySelector('#answerMe') as HTMLInputElement);
+
+// I repeated you way too many times
+var nameHotel: string;
 
 // same as car
 var hotel: Hotel;
@@ -15,11 +18,13 @@ var hotel2: Hotel;
 var hotel3: Hotel;
 var hotel4: Hotel;
 var hotel5: Hotel;
+
 //array
 var arrHotel: any = []
 
 //you won't lie!
 var ruler: boolean;
+
 //some for me
 var hotel2 = new Hotel ("Hilton", 25, 2, 650);
 var hotel3 = new Hotel ("Vela", 25, 2, 650);
@@ -68,9 +73,10 @@ function checkHotels(str: string) {
 
 // CREATE
 function buildHotel(): void{
-
+    // clean
+    clearMe();
         // give me data
-        var nameHotel: string = myName();
+        nameHotel = myName();
         var numRooms: number  = parseInt((document.getElementById('hotelRooms') as HTMLInputElement).value);
         var numFloors: number = parseInt((document.getElementById('hotelFloors') as HTMLInputElement).value);
         var totalSurf: number = parseInt((document.getElementById('hotelSurf') as HTMLInputElement).value);
@@ -93,6 +99,8 @@ function buildHotel(): void{
 
 // DELETE
 function nuriaKasparov(): void{
+    // clean
+    clearMe();
     // get the name
     let str: string = myName();
     // a true friend
@@ -122,8 +130,10 @@ function nuriaKasparov(): void{
 }
 // CHECK ME
 function lookUp(): void {
+    //clean 
+    clearMe();
     //get me the name
-    var nameHotel: string = myName();
+    nameHotel = myName();
      //check me
      ruler = checkHotels(nameHotel);
      //do something you fool
@@ -131,21 +141,78 @@ function lookUp(): void {
                        writeMe.innerText = `${nameHotel} is not one of our Hotels`;
 
 }
-// MODIFIE
+// MODIFY
 function modifyMe() {
-    console.log('modify works');
+    // clean
+    clearMe();
+    //get me the name
+    nameHotel = myName();
+    // really George?
+    let myCheck: number = firstCheck();
+    // a true friend
+    let found: boolean = false;
+    // and my lighthouse
+    let i: number = 0;
+    // and my swiss companion
+    let choice: number = 0;
+    // container
+    let container: any;
+    //so you are the one
+    if(myCheck === 1) {
+        //let's do this
+        (console.log("modify really works"));
+        // nasdrovia kasparov Nuria
+        while(!found && i < arrHotel.length){
+            //iterate
+            if (arrHotel[i].nameHotel === nameHotel) {
+                // a real tale
+                found = true;
+                // I need you conatined
+                container = arrHotel[i];
+                // and again, show me your real numbers
+                choice = parseInt(prompt(`The ${nameHotel} Hotel has been found: What would you like to change? \n Name: PRESS 1 \n Rooms: PRESS 2 \n Floors: PRESS 3 \n m2 surface: PRESS 4`));
+            }
+            //I'll follow you til the end of days
+            i++;
+        }
+        console.log(container);
+        // I welcome you old friend
+        switch (choice) {
+            case 1:
+                container.nameHotel = prompt(" What name would you like for your hotel?");
+                break;
+            case 2: 
+                container.numRooms = parseInt(prompt("Number of rooms?"));
+                break;
+            case 3:
+                container.numFloos = parseInt(prompt("Number of floors?"));
+                break;
+            case 4:
+                container.totalSurf = parseInt(prompt("m2?"));
+                break;
+        
+            default:
+                alert("Something went really wrong you fool");
+                break;
+        }
+        
+    } 
+      (container <= 4) ? writeMe.innerText = `${container.toUpdate()}` :  writeMe.innerText = "This is all wrong you fool!";
+    
 }
 // AUX FUNCTIONS
 //clear
 function clearMe(): void {
     writeMe.innerText = "";
-    (document.querySelector<HTMLInputElement>('.form-control')).innerHTML = "";
+    // Joan will hate me for this
+    (document.querySelector(".form-control") as HTMLInputElement).innerText = "";
     
 }
 
 //get me name
 function myName() {
-    let nameHotel: string = (document.getElementById('hotelName') as HTMLInputElement).value;
+    // where should we meet?
+    nameHotel = (document.getElementById('hotelName') as HTMLInputElement).value;
     //you watch their behaviour
     let counter: number = 0;
 
@@ -164,4 +231,19 @@ function myName() {
     nameHotel = nameHotel.substring(0, 1).toUpperCase() + nameHotel.substring(1);
         // go and fly by yourself
         return nameHotel;
+}
+//First check
+function firstCheck(){
+    console.log('first works');
+    // container
+    let flag: number;
+    //tell me 
+    flag = parseInt(prompt(`${nameHotel} is the one you want to modify? \n "YES" press 1 \n "NO" press 2`));
+    // show me your numbers
+    if (flag === 1) {
+        return flag;
+    } else {
+        alert("Thank you for trusting us!");
+    }
+
 }
