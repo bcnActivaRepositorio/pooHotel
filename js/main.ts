@@ -57,11 +57,11 @@ function checkHotels(str: string) {
    // N of A
    //sin duda implementaré Nuria Kasparov check por su versatilidad, pero esto es lo que he hecho SIN mirar
    // a comparar con lo hecho en Junio pls
-   /* function nuriaKasparov(str: string){
+   /* function nuriaCheck(str: string){
        // a true friend
        let found: boolean = false;
+       // the runner
        let i: number = 0;
-       
        // you really need to learn THIS
        while( found == false && i < arrHotel.length){
            // iterate with index as referee
@@ -83,18 +83,13 @@ function buildHotel(): void{
     
     //check me
     ruler = checkHotels(nameHotel);
-
-    (ruler == true) ?  console.log(`${nameHotel} already in Database`) : arrHotel.push(hotel = new Hotel(nameHotel, numRooms, numFloors, totalSurf));
-    //show me
-    console.log(arrHotel);    
-    console.log(hotel);
+    // push me if true if not tell me the true
+    (ruler == true) ?  writeMe.innerText = (`${nameHotel} Hotel already in Database`) : arrHotel.push(hotel = new Hotel(nameHotel, numRooms, numFloors, totalSurf));
     //print me
     if (ruler == false){
-        alert( ` ${hotel.nameHotel}'s hotel: \n ${hotel.numRooms} rooms \n ${hotel.numFloors} floors \n ${hotel.totalSurf}m2 \n`);
+        // alert( ` ${hotel.nameHotel}'s hotel: \n ${hotel.numRooms} rooms \n ${hotel.numFloors} floors \n ${hotel.totalSurf}m2 \n`);
         writeMe.innerText = hotel.toString();
-    } else {
-       writeMe.innerText = `The ${nameHotel} Hotel is already in our database.`
-    }
+    } 
 }
 
 // DELETE
@@ -126,7 +121,6 @@ function nuriaKasparov(): void{
         // I want to see it
         writeMe.innerText = `${str} is not one of our Hotels`;
     }
-    console.log(arrHotel);
 }
 // CHECK ME
 function lookUp(): void {
@@ -175,7 +169,6 @@ function modifyMe() {
             //I'll follow you til the end of days
             i++;
         }
-        console.log(container);
         // I welcome you old friend
         switch (choice) {
             case 1:
@@ -197,7 +190,8 @@ function modifyMe() {
         }
         
     } 
-      (container <= 4) ? writeMe.innerText = `${container.toUpdate()}` :  writeMe.innerText = "This is all wrong you fool!";
+    // you and your weird election of conditionals
+      (choice <= 4) ? writeMe.innerText = `${container.toUpdate()}` :  writeMe.innerText = "This is all wrong you fool!";
     
 }
 // AUX FUNCTIONS
@@ -232,6 +226,7 @@ function myName() {
         // go and fly by yourself
         return nameHotel;
 }
+
 //First check
 function firstCheck(){
     console.log('first works');
