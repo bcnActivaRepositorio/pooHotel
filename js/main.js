@@ -200,12 +200,7 @@ function myName() {
         counter++;
     }
     // work later in checks!
-    //you don't like white, do you?
-    nameHotel = nameHotel.replace(/\s/g, "");
-    // all working class
-    nameHotel = nameHotel.toLowerCase();
-    // and now you get bourgouise
-    nameHotel = nameHotel.substring(0, 1).toUpperCase() + nameHotel.substring(1);
+    nameHotel = polishName(nameHotel);
     // go and fly by yourself
     return nameHotel;
 }
