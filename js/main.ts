@@ -173,12 +173,13 @@ function modifyMe() {
         switch (choice) {
             case 1:
                 container.nameHotel = prompt(" What name would you like for your hotel?");
+                container.nameHotel = polishName(container.nameHotel);
                 break;
             case 2: 
                 container.numRooms = parseInt(prompt("Number of rooms?"));
                 break;
             case 3:
-                container.numFloos = parseInt(prompt("Number of floors?"));
+                container.numFloors = parseInt(prompt("Number of floors?"));
                 break;
             case 4:
                 container.totalSurf = parseInt(prompt("m2?"));
@@ -241,4 +242,14 @@ function firstCheck(){
         alert("Thank you for trusting us!");
     }
 
+}
+function polishName(str: string){
+   //you don't like white, do you?
+   str = str.replace(/\s/g, "");
+   // all working class
+   str = str.toLowerCase();
+   // and now you get bourgouise
+   str = str.substring(0, 1).toUpperCase() + str.substring(1);
+       // go and fly by yourself
+       return str;  
 }
